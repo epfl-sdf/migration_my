@@ -24,7 +24,7 @@ def links_in_page(domain_url, page_url):
         response = requests.get(page_url)
         if not response.ok:
             print("Error with page", page_url,"status",response.status_code)
-            return None, None, None, response.status_code
+            return None, None, pd.DataFrame(), response.status_code
         soup = BeautifulSoup(response.text, 'html.parser')
         df_temp = parse_gallery(soup, domain_url, page_url)
         regObj = re.compile('^(/[^/].+|' + domain_url + '.+)')
@@ -99,7 +99,7 @@ def explore_domain(domain):
                 links, error_message, df_temp, stat_code = links_in_page(domain, page)
                 if not stat_code:
                     continue
-                if not links and not df_temp and stat_code != 200:
+                if not links and df_temp.empty and stat_code != 200:
                     d = {
                         'domain': [domain],
                         'page': [page],

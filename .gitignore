@@ -106,3 +106,4 @@ venv.bak/
 
 # wget-ed html pages
 html*
+.vscode*

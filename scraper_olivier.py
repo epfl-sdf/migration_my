@@ -8,7 +8,7 @@ import pandas as pd
 import requests
 
 bad_extensions = ['css', 'js', 'ico', 'png', 'jpg', 'pdf']
-prefix = '//documents.epfl.ch/'
+prefix = '://documents.epfl.ch/'
 
 
 def links_in_page(domain_url, page_url):
@@ -23,7 +23,7 @@ def links_in_page(domain_url, page_url):
     try:
         response = requests.get(page_url)
         if not response.ok:
-            print("Error with page", page_url,"status",response.status_code)
+            print("Error with page", page_url, "status", response.status_code)
             return None, None, pd.DataFrame(), response.status_code
         soup = BeautifulSoup(response.text, 'html.parser')
         df_temp = parse_gallery(soup, domain_url, page_url)
@@ -96,7 +96,8 @@ def explore_domain(domain):
             to_visit_in_domain.remove(page)
             if page not in visited_in_domain:
                 visited_in_domain.add(page)
-                links, error_message, df_temp, stat_code = links_in_page(domain, page)
+                links, error_message, df_temp, stat_code = links_in_page(
+                    domain, page)
                 if not stat_code:
                     continue
                 if not links and df_temp.empty and stat_code != 200:
@@ -106,7 +107,7 @@ def explore_domain(domain):
                         'status_code': [stat_code]
                     }
                     df_temp = pd.DataFrame(data=d)
-                df_domain = pd.concat([df_domain, df_temp], axis=0)
+                df_domain = pd.concat([df_domain, df_temp], axis=0, sort=True)
                 if error_message:
                     print("Page", page, "yielded an error:", error_message)
                 links = clean_links(links)
@@ -164,14 +165,14 @@ def myEpflGalleryBox_documents(page_urls):
     df_res = pd.DataFrame()
     # Get all documents inside myEpflGalleyBox from the domain_urls
     for domain in page_urls:
-        print('domain url --> ', domain,"at",datetime.datetime.now())
+        print('domain url --> ', domain, "at", datetime.datetime.now())
         df_temp = recover(domain)
         if df_temp.empty:
             df_temp = explore_domain(domain)
             save_temp(domain, df_temp)
         else:
             print("Recovered", domain, "from a previous run")
-        df_res = pd.concat([df_res, df_temp], axis=0)
+        df_res = pd.concat([df_res, df_temp], axis=0, sort=True)
         # Remove duplicates from dataframe of documents
     return df_res.set_index('domain').drop_duplicates(subset=['page', 'document'])[['page', 'document', 'size [KB]', 'status_code']]
 
@@ -219,11 +220,11 @@ def name_extractor(url):
 
 
 if __name__ == "__main__":
-    print("Starting at",datetime.datetime.now())
+    print("Starting at", datetime.datetime.now())
     input_filename = 'urls_myEpflGallery.csv'
     output_filename = "output_olivier.csv"
     df_urls = pd.read_csv(input_filename)
-    df_urls = df_urls.rename(index=str, columns={'Sites': 'URL'})
+    df_urls = df_urls.rename(index=str, columns={'sites': 'URL'})
     result = myEpflGalleryBox_documents(list(df_urls['URL']))
     write_result(output_filename, result)
-    print("Ending at",datetime.date.now())
+    print("Ending at", datetime.datetime.now())

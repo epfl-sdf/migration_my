@@ -19,10 +19,12 @@ def links_in_page(domain_url, page_url):
         page_url += '/'
     if domain_url[-1:] != '/':
         domain_url += '/'
+    response = None
     try:
         response = requests.get(page_url)
         if not response.ok:
-            return None, None, None
+            print("Error with page", page_url,"status",response.status_code)
+            return None, None, None, response.status_code
         soup = BeautifulSoup(response.text, 'html.parser')
         df_temp = parse_gallery(soup, domain_url, page_url)
         regObj = re.compile('^(/[^/].+|' + domain_url + '.+)')
@@ -61,7 +63,7 @@ def links_in_page(domain_url, page_url):
     except requests.exceptions.RequestException as e:
         error_message = 'There was an ambiguous exception that' +\
             'occurred while handling your request : ' + str(e)
-    return links, error_message, df_temp
+    return links, error_message, df_temp, response.status_code
 
 
 def clean_links(links_list):
@@ -94,7 +96,16 @@ def explore_domain(domain):
             to_visit_in_domain.remove(page)
             if page not in visited_in_domain:
                 visited_in_domain.add(page)
-                links, error_message, df_temp = links_in_page(domain, page)
+                links, error_message, df_temp, stat_code = links_in_page(domain, page)
+                if not stat_code:
+                    continue
+                if not links and not df_temp and stat_code != 200:
+                    d = {
+                        'domain': [domain],
+                        'page': [page],
+                        'status_code': [stat_code]
+                    }
+                    df_temp = pd.DataFrame(data=d)
                 df_domain = pd.concat([df_domain, df_temp], axis=0)
                 if error_message:
                     print("Page", page, "yielded an error:", error_message)
@@ -141,7 +152,8 @@ def parse_gallery(soup, domain, subpage):
         'domain': [domain]*len(documents),
         'page': [subpage]*len(documents),
         'document': documents,
-        'size [KB]': sizes
+        'size [KB]': sizes,
+        'status_code': float('NaN')
     }
     return pd.DataFrame(data=d)
 
@@ -161,7 +173,7 @@ def myEpflGalleryBox_documents(page_urls):
             print("Recovered", domain, "from a previous run")
         df_res = pd.concat([df_res, df_temp], axis=0)
         # Remove duplicates from dataframe of documents
-    return df_res.set_index('domain').drop_duplicates(subset=['page', 'document'])[['page', 'document', 'size [KB]']]
+    return df_res.set_index('domain').drop_duplicates(subset=['page', 'document'])[['page', 'document', 'size [KB]', 'status_code']]
 
 
 def write_result(base_output_filename, result):
@@ -187,7 +199,7 @@ def save_temp(domain, dataframe):
     domain_name = name_extractor(domain)
     filename = base_filename + "_" + domain_name + ".csv"
     result = dataframe.set_index('domain').drop_duplicates(
-        subset=['page', 'document'])[['page', 'document', 'size [KB]']]
+        subset=['page', 'document'])[['page', 'document', 'size [KB]', 'status_code']]
     result.reset_index().to_csv(filename, index=False)
 
 

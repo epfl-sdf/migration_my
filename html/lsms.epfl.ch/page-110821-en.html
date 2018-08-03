@@ -1,0 +1,596 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head prefix="og: http://ogp.me/ns#">
+		<script type="text/javascript" language="JavaScript">
+			var jahiaMainServletPath="/cms";
+			var jahiaContextPath ="";
+			var jahiaCoreWebdavPath ="/webdav";
+		</script>
+		<title>Implementation of a Kirchhoff shell element | LSMS</title>
+		<!--googleoff: index-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="headerversion" content="3.1.1"/>
+		<meta name="headerdate" content="2018-07-18"/>
+		<link rel="shortcut icon" href="//www.epfl.ch/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="//www.epfl.ch/css/print.css" type="text/css" media="print" />
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta http-equiv="content-script-type" content="text/javascript" />
+		<meta http-equiv="content-style-type" content="text/css" />
+		<link href="//www.epfl.ch/css/epfl.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="//www.epfl.ch/css/applications.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="/templates/epfl/styles/homePortal.css" media="screen" rel="stylesheet" type="text/css"/>
+		<link href="/templates/epfl/styles/legacy.css" media="screen" rel="stylesheet" type="text/css"/>
+		<link href="/templates/epfl/css/jahia.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="//www.epfl.ch/css/print.css" media="print" rel="stylesheet" type="text/css" />
+		<link href="//www.epfl.ch/css/enac.css" media="all" rel="stylesheet" type="text/css"/>
+		<!-- homeLayoutValue is standard -->
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript">window.jQuery||document.write(unescape("%3Cscript src='/templates/epfl/js/jquery.js' type='text/javascript'%3E%3C/script%3E"))</script>
+		<script type="text/javascript" src="/templates/epfl/js/jquery.plugins.js"></script>
+		<script type="text/javascript">var epflJ = jQuery.noConflict();</script>
+		<script type="text/javascript" src="/templates/epfl/js/epfl.js"></script>
+		<script  src="/templates/epfl/js/highlight.js"></script>
+		<script  src="/templates/epfl/js/quickclear.js"></script>
+		<script  src="/templates/epfl/js/infoscience.js"></script>
+		<script  src="//www.epfl.ch/js/epfl-cookie-consent.js "></script>
+		<script src="/templates/epfl/js/socialshare.js"></script>
+		<script type="text/javascript">EPFL.analytics.setAccount('UA-6176490-3')</script>
+		<meta property="og:title" content="Implementation of a Kirchhoff shell element | EPFL" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="http://lsms.epfl.ch/page-110821.html" />
+		<!--googleon: index-->
+	</head>
+	<body itemtype="http://schema.org/WebPage" itemscope="itemscope">
+		<div id="actualContent">
+			<!--googleoff: index-->
+			<a id="top" name="top"></a>
+			<h1 class="visuallyhidden">Accessibility Links</h1>
+			<div id="accessibility" class="visuallyhidden" role="navigation">
+				<ul>
+					<li><a accesskey="0" href="http://www.epfl.ch/accessibility.en.shtml" title="Specific informations for persons with disabilities">Accessibility</a></li>
+					<li><a accesskey="1" href="#content" title="Skip the header and jump to the page content">Skip to content</a></li>
+					<li><a accesskey="2" href="#search" title="Jump to the search field" id="searchlink">Jump to search field</a></li>
+					<li><a accesskey="3" href="#main-navigation" title="Jump to the navigation within this site">Site navigation</a></li>
+					<li><a accesskey="4" href="#navigation" title="Jump to the navigation within EPFL sites">EPFL navigation</a></li>
+					<li><a accesskey="5" href="#breadcrumbs" title="Jump to the breadcrumbs navigation">Breadcrumbs navigation</a></li>
+					<li><a accesskey="6" href="#languages" title="Jump to the language selector">Language switcher</a></li>
+					<li><a accesskey="8" href="/sitemap" title="Go to the sitemap">Sitemap</a></li>
+					<li><a accesskey="9" href="mailto:webmaster@epfl.ch" title="Send an email to the technical contact">Technical contact</a></li>
+				</ul>
+			</div>
+			<h1 class="visuallyhidden">General EPFL navigation</h1>
+			<div id="header2013" role="banner" class="filler">
+				<div id="nav-logo"><a href="http://www.epfl.ch" title="EPFL homepage"><img src="//www.epfl.ch/img/epfl_small.png" /></a></div>
+				<div id="nav-menus">
+					<a id="navigation" name="navigation"></a>
+					<ul id="main-menus">
+						<li class="portal menu" id="public-menu-link">
+							<h2 class="visuallyhidden">Navigate by profile</h2>
+							<a class="main-link" href="http://www.epfl.ch/navigate.en.shtml" title="Navigate by profile"><span>You</span> are</a>
+						</li>
+						<li class="school menu" id="school-menu-link">
+							<h2 class="visuallyhidden">Navigate by school</h2>
+							<a class="main-link" href="http://www.epfl.ch/navigate.en.shtml" title="Navigate by school"><span>By</span> school</a>
+						</li>
+						<li class="short menu" id="brief-menu-link">
+							<h2 class="visuallyhidden">About EPFL</h2>
+							<a class="main-link" href="http://www.epfl.ch/navigate.en.shtml"><span>about</span> EPFL</a>
+						</li>
+					</ul>
+				</div>
+				<div id="nav-search">
+					<div id="search-box">
+						<a name="search"></a>
+						<form name="search" action="//search.epfl.ch/process_web2010" class="searchform" id="header_searchform">
+							<input type="hidden" name="lang" value="en" />
+							<input type="hidden" name="as_site_search" value="" id="header_local_site" />
+							<input type="text" class="search ui-autocomplete-input" name="q" value="" id="header_searchfield" autocomplete="off" aria-autocomplete="list" aria-haspopup="true" />
+							<div class="search-filter">
+								<a href="#" class="selected-field">Directory</a>
+								<ul class="menu hidden">
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-person" value="person" checked="checked" title="Find a person" />
+										<label for="search-engine-person" class="current" title="Find a person">Directory</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-epfl" value="epfl" title="Search within EPFL sites"/>
+										<label for="search-engine-epfl" title="Search within EPFL sites">EPFL websites</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-place" value="place" title="Find a place"/>
+										<label for="search-engine-place" title="Find a place">Place</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-local" value="local"  title="Search within this site"/>
+										<label for="search-engine-local" title="Search within this site">This website</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-eduweb" value="eduweb" title="Find courses"/>
+										<label for="search-engine-eduweb" title="Find courses">Courses</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-publication" value="publication" title="Find publications"/>
+										<label for="search-engine-publication" title="Find publications">Publications</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-actuweb" value="actuweb" title="Find news"/>
+										<label for="search-engine-actuweb" title="Find news">News</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-unit" value="unit" title="Find EPFL units"/>
+										<label for="search-engine-unit" title="Find EPFL units">EPFL units</label>
+									</li>
+								</ul>
+							</div>
+							<button type="submit" class="search-button local-color"  title="Search">Search</button>
+						</form>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--googleon: index-->
+			<div id="main-content" class=" theme-enac page-110821intranet">
+			<div class="header">
+			<h1>
+                    <a href="/page-8904.html" title="LSMS ">
+                        <span>Computational Solid Mechanics Laboratory</span>&nbsp;<acronym title="Computational Solid Mechanics Laboratory" class="local-color-text">LSMS</acronym></a>
+
+                    </h1>
+			<div class="clear"></div>
+			<h2 class="visuallyhidden">Breadcrumb navigation</h2>
+			<ul id="breadcrumbs" title="EPFL breadcrumb" role="navigation">
+			<li>
+			<a title="Go to page: EPFL Homepage" href="http://www.epfl.ch">EPFL</a>
+			</li>
+			<li>
+                        <a href="http://enac.epfl.ch" title="Go to page: ENAC">ENAC</a>
+                    </li>
+			<li>
+                        <a href="http://enac.epfl.ch/page-2921.html" title="Go to page: IIC">IIC</a>
+                    </li>
+			<li
+				>
+			<a href="/page-8904.html"
+				title="Go to page: LSMS"
+				>
+			LSMS</a>
+			</li>
+			<li
+				>
+			<a href="/page-10479.html"
+				title="Go to page: Teaching"
+				>
+			Teaching</a>
+			</li>
+			<li
+				>
+			<a href="/page-50693.html"
+				title="Go to page: Student Projects"
+				>
+			Student Projects</a>
+			</li>
+			<li
+				>
+			<a href="/page-77560.html"
+				title="Go to page: Former students projects"
+				>
+			Former students projects</a>
+			</li>
+			<li
+				class="last">
+			Implementation of a Kirchhoff shell element</li>
+			</ul>
+			<script type="text/javascript">
+				epflJ(document).ready(function() {
+				    epflJ("#dropdown10479").addClass("inpath");
+				    if (110821 == 10479) {
+				        epflJ("#dropdown10479").addClass("current");
+				    }
+				    epflJ("#updatesubmenu").addClass("inpath");
+				    epflJ("#deletesubmenu").addClass("inpath");
+				});
+			</script>
+			<div id="level2PageId" style="display:none">10479</div>
+			<!--googleoff: index-->
+			<h2 class="visuallyhidden">Language switcher</h2>
+			<ul id="languages" title="Choose language">
+			<li class='current'>
+			<span>English</span>
+			</li>
+			</ul>
+			<div class="clear"></div>
+			</div>
+			<h2 class="visuallyhidden">Go to</h2>
+			<div id="main-navigation" class="navigation-bar">
+			<a class="visuallyhidden" href="/" title="Go to the site homepage">Site homepage</a>
+			<ul class="topnav" role="navigation">
+    <li class="homeLink">
+            <a href="/page-8904.html" title="LSMS "><span>LSMS</span></a>
+        </li>
+    <li id="dropdown10480" class="dropdown"><a  title="Go to level 1 page: Research" href="/page-10480-en.html">Research</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/page-10480-en.html">Research</a>
+                    </li>
+            <li id="dropdown50949"><a  title="Go to page: Contact Mechanics / Tribology" href="/page-50949-en.html">Contact Mechanics / Tribology</a><ul><li id="dropdown151827"><a  title="Go to page: Nanoscale Friction and Wear" href="/page-151827-en.html">Nanoscale Friction and Wear</a></li><li id="dropdown131883"><a  title="Go to page: Mesoscale Contact, Friction and Wear" href="/page-131883-en.html">Mesoscale Contact, Friction and Wear</a></li><li id="dropdown74218"><a  title="Go to page: Rate and State Friction" href="/page-74218-en.html">Rate and State Friction</a></li></ul></li><li id="dropdown50950"><a  title="Go to page: Damage and Fracture Mechanics" href="/page-50950-en.html">Damage and Fracture Mechanics</a><ul><li id="dropdown51345"><a  title="Go to page: Dynamic failure and fragmentation" href="/page-51345-en.html">Dynamic failure and fragmentation</a></li><li id="dropdown51346"><a  title="Go to page: Continuum damage models for crack propagation" href="/page-51346-en.html">Continuum damage models for crack propagation</a></li><li id="dropdown90328"><a  title="Go to page: Alkali-silica reaction modeling at mesoscale" href="/page-90328-en.html">Alkali-silica reaction modeling at mesoscale</a></li></ul></li><li id="dropdown50952"><a  title="Go to page: Numerical Methods Across Scales" href="/page-50952-en.html">Numerical Methods Across Scales</a><ul><li id="dropdown151831"><a  title="Go to page: General Purpose Finite-Elements (Akantu)" href="https://lsms.epfl.ch/akantu">General Purpose Finite-Elements (Akantu)</a></li><li id="dropdown50967"><a  title="Go to page: Mesoscale Contact" href="/page-50967-en.html">Mesoscale Contact</a></li><li id="dropdown52153"><a  title="Go to page: General Purpose Coupling Across Scales (libMultiScale)" href="/page-52153-en.html">General Purpose Coupling Across Scales (libMultiScale)</a></li><li id="dropdown52154"><a  title="Go to page: Atomistic to Continuum Coupling at Finite Temperature" href="/page-52154-en.html">Atomistic to Continuum Coupling at Finite Temperature</a></li><li id="dropdown52155"><a  title="Go to page: Coupled Atomistic Discrete Dislocations (CADD 3D)" href="/page-52155-en.html">Coupled Atomistic Discrete Dislocations (CADD 3D)</a></li></ul></li></ul></li><li id="dropdown50953" class="dropdown"><a  title="Go to level 1 page: High Performance Computing" href="/page-50953-en.html">High Performance Computing</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/page-50953-en.html">High Performance Computing</a>
+                    </li>
+            <li id="dropdown53416"><a  title="Go to page: Software" href="/page-53416-en.html">Software</a><ul><li id="dropdown76679"><a  title="Go to page: Akantu" href="/akantu">Akantu</a></li><li id="dropdown118830"><a  title="Go to page: LibMultiScale" href="/libmultiscale">LibMultiScale</a></li></ul></li><li id="dropdown70111"><a  title="Go to page: Computing Ressources" href="/page-70111-en.html">Computing Ressources</a></li></ul></li><li id="dropdown20083" class="dropdown"><a  title="Go to level 1 page: Publications" href="/page-20083-en.html">Publications</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/page-20083-en.html">Publications</a>
+                    </li>
+            <li id="dropdown20087"><a  title="Go to page: Journal Articles" href="/page-20087-en.html">Journal Articles</a></li><li id="dropdown50600"><a  title="Go to page: Theses, Books and Book Chapters" href="/page-50600-en.html">Theses, Books and Book Chapters</a></li><li id="dropdown50959"><a  title="Go to page: Conferences" href="/page-50959-en.html">Conferences</a></li></ul></li><li id="dropdown10479" class="dropdown"><a  title="Go to level 1 page: Teaching" href="/page-10479-en.html">Teaching</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/page-10479-en.html">Teaching</a>
+                    </li>
+            <li id="dropdown150082"><a  title="Go to page: Education" href="/page-150082-en.html">Education</a><ul></ul></li><li id="dropdown50693"><a  title="Go to page: Student Projects" href="/page-50693-en.html">Student Projects</a><ul></ul></li></ul></li><li id="dropdown10481" class="dropdown"><a  title="Go to level 1 page: Members" href="/page-10481-en.html">Members</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/page-10481-en.html">Members</a>
+                    </li>
+            <li id="dropdown50698"><a  title="Go to page: Members" href="https://lsms.epfl.ch/page-10481-en.html">Members</a></li><li id="dropdown49491"><a  title="Go to page: Alumni LSMS" href="/page-49491-en.html">Alumni LSMS</a></li><li id="dropdown59372"><a  title="Go to page: Lab life" href="/page-59372-en.html">Lab life</a></li></ul></li><li id="dropdown49493" class="dropdown"><a  title="Go to level 1 page: Applicants" href="/page-49493-en.html">Applicants</a></li></ul>
+    <script>
+        jQuery(".level1").hover(
+                function () {
+                    jQuery(this).addClass('to');
+                },
+                function () {
+                    jQuery(this).removeClass('to');
+                }
+        );
+    </script>
+
+    
+			<div class="clear"></div>
+			</div>
+			<noscript>
+			<style type="text/css">
+			/* Hoverintent fallback for main navigation */
+			#main-navigation .dropdown:hover .menu.hidden{left:0}
+			</style>
+			</noscript>
+			<div id="tools" role="toolbar">
+			<div class="socialshare" style="float: left;">
+			<span class="label"
+				style="background: none;position: relative;top: 3px;padding-right: 10px;">
+			Share:
+			</span>
+			</div>
+			<img src="/templates/epfl/img/socialshare-icons/grey-facebook-round.png" class="icon-facebook social-icon" title="Share on Facebook" alt="Share on Facebook">
+			<img src="/templates/epfl/img/socialshare-icons/grey-twitter-round.png" class="icon-twitter social-icon" title="Share on Twitter" alt="Share on Twitter">
+			<img src="/templates/epfl/img/socialshare-icons/grey-linkedin-round.png" class="icon-linkedin social-icon" title="Share on LinkedIn" alt="Share on LinkedIn">
+			<img src="/templates/epfl/img/socialshare-icons/grey-googleplus-round.png" class="icon-googleplus social-icon" title="Share on Google+" alt="Share on Google+">
+			<img src="/templates/epfl/img/socialshare-icons/grey-mail-round.png" class="icon-email social-icon" title="Share by mail" alt="Share on Google+">
+			<a id="social-share-email-link" class='hidden' href="mailto:?subject=">Implementation of a Kirchhoff shell element</a>
+			<a id="social-share-email-link-2" class='hidden' href="mailto:?subject=">Implementation of a Kirchhoff shell element</a>
+			</div>
+			<!--googleon: index-->
+			<div id="content" class="content" role="main">
+			<h2 itemprop="name">Implementation of a Kirchhoff shell element</h2>
+			<div id="588463" class="  textBox" style="">
+               <h3>
+
+                                Projet Labo GC - Printemps 2014</h3>
+                        
+<p align="JUSTIFY" class="western" lang="fr-FR">
+	<font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">Ce projet de semestre consiste en l&rsquo;impl&eacute;mentation des &eacute;l&eacute;ments coques de Kirchhoff dans la librairie d&rsquo;&eacute;l&eacute;ments finis</font>
+	</font>
+	</font> <em>
+	<font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">Akantu<font face="Arial, serif">.</font>
+	</font>
+	</font>
+	</font>
+	</em> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">A cet effet,</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">l<font face="Arial, serif">es</font> &eacute;quations d'&eacute;quilibre axiales</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">et flexionnelles</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">pour cet &eacute;l&eacute;ment particulier sont</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">&eacute;tudi&eacute;es.</font>
+	</font>
+	</font>
+</p>
+<p align="JUSTIFY" class="western" lang="fr-FR" style="margin-right: 0.36in; margin-top: 0.09in; margin-bottom: 0.09in; background: #ffffff; line-height: 0.19in">
+	<font face="Times, serif">
+	<font size="2">
+	<font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">Les &eacute;l&eacute;ments coques sont soumis</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">&agrave; <font face="Arial, serif">un champ</font>
+	</font>
+	</font>
+	</font>
+	</font>
+	</font> <font face="Times, serif">
+	<font size="2">
+	<font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">de d&eacute;placement</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">axial et flexionnel. En supposant aucune interaction entre ces deux comportements, ils</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">peuvent &ecirc;tre &eacute;tudi&eacute;s s&eacute;par&eacute;ment. La th&eacute;orie des structures minces est appliqu&eacute;e sous l&rsquo;hypoth&egrave;se des petites d&eacute;formations et l&rsquo;hypoth&egrave;se de Bernoulli-Kirchhoff-Love afin de</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">d&eacute;finir le <font face="Arial, serif">mod<font face="Arial, serif">&egrave;le repr&eacute;sentant</font>
+	</font> ces deux comportements.</font>
+	</font>
+	</font>
+	</font>
+	</font> &nbsp;
+</p>
+<p align="JUSTIFY" class="western" lang="fr-FR" style="margin-right: 0.36in; margin-top: 0.09in; margin-bottom: 0.09in; background: #ffffff; line-height: 0.19in">
+	<font face="Times, serif">
+	<font size="2">
+	<font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">L'&eacute;l&eacute;ment fini impl&eacute;ment&eacute; est l'&eacute;l&eacute;ment DKT (Discrete Kirchhoff Triangle) qui est un triangle &agrave; trois noeuds. Cet &eacute;l&eacute;ment assure</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">la conformit&eacute; <font face="Arial, serif">d</font>u comportement axial en int&eacute;grant un mod&egrave;le d'&eacute;l&eacute;ment triangulaire lin&eacute;aire 2D en &eacute;tat plan de contrainte. Concernant le comportement flexionnel,</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">le crit&egrave;re de continuit&eacute; sur</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">un &eacute;l&eacute;ment</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">&agrave; trois noeuds <font face="Arial, serif">impose</font> plus de termes inconnus n&eacute;cessaires &agrave; l&rsquo;interpolation que de degr&eacute;s de libert&eacute;. Le choix du mod&egrave;le</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">DKT perm<font face="Arial, serif">e</font>t</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">de r&eacute;soudre ce probl&egrave;me et d'assurer ainsi</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">la conformit&eacute;</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">aux crit&egrave;res de convergence par l'ajout</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">d'un degr&eacute; de libert&eacute; interne</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">et l'utilisation de</font>
+	</font>
+	</font> <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">l&rsquo;hypoth&egrave;se de Kirchhoff.</font>
+	</font>
+	</font>
+	</font>
+	</font>
+</p>
+<p align="JUSTIFY" class="western" lang="fr-FR" style="margin-right: 0.36in; margin-top: 0.09in; margin-bottom: 0.09in; background: #ffffff; line-height: 0.19in">&nbsp;</p>
+<p class="western" lang="fr-FR">
+	<img alt="Kirchhoff_shell_element" height="203" src="/files/content/sites/lsms/files/images/student_projects/kirchhoff_shell_element.png" width="603"/>&nbsp;&nbsp; <font color="#454545">
+	<font face="Arial, serif">
+	<font size="3">
+	<em>
+	<font face="Arial, serif">Les <font face="Arial, serif">cham<font face="Arial, serif">ps de d<font face="Arial, serif">&eacute;placement <font face="Arial, serif">axia<font face="Arial, serif">ux</font> et flexionnels constituant l'&eacute;l&eacute;ment <font face="Arial, serif">coque</font> de Kirchhoff DKT.</font>
+	</font>
+	</font>
+	</font>
+	</font>
+	</em>
+	</font> <em/>
+	</font>
+	</font> <em/> <em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (J.-L. Batoz et G. Dhatt, 1990)</em>
+</p>
+<p class="western" lang="fr-FR">&nbsp;</p>
+<dl>
+	<dt class="western" lang="fr-FR">
+		<strong>Etudiant:</strong>
+	</dt>
+	<dd class="western" lang="fr-FR" style="margin-bottom: 0.2in">
+		<em>Damien Spielmann</em>, <a href="mailto:emmanuel.niederman@epfl.ch">damien.spielmann@epfl.ch</a>
+	</dd>
+	<dt class="western" lang="fr-FR">
+		<strong>Responsables:</strong>
+	</dt>
+	<dd class="western" lang="fr-FR">
+		<em>Fabian Barras (LSMS)</em>, <a href="mailto:aurelia.cubaramos@epfl.ch">fabian.barras@epfl.ch</a>
+	</dd>
+	<dd class="western" lang="fr-FR" style="margin-bottom: 0.2in">
+		<em>Jean-Fran&ccedil;ois Molinari (LSMS)</em>, <a href="mailto:jean-fran&ccedil;ois.molinari@epfl.ch">jean-francois.molinari@epfl.ch</a>
+	</dd>
+</dl>
+<p>&nbsp;</p>
+<div class="clear"></div>
+            
+<div class="clear"></div>
+            
+<div class="clear"></div>
+</div>
+			<div class="clear"></div>
+			<div class="clear"></div>
+			</div>
+			<div class="right-col" role="complementary">
+			<h2 class="visuallyhidden">Secondary navigation</h2>
+			<ul class="tree local-color treeview">
+        <li id="tree150082" class="relative "><a title="Go to page:Education"  href="/page-150082-en.html">Education</a><ul><li id="tree150083" class="relative "><a title="Go to page:Current Year Courses"  href="/page-150083-en.html">Current Year Courses</a></li></ul></li><li id="tree50693" class="relative inpath open"><a title="Go to page:Student Projects"  href="/page-50693-en.html">Student Projects</a><ul><li id="tree77560" class="relative inpath open"><a title="Go to page:Former students projects"  href="/page-77560-en.html">Former students projects</a><ul><li id="tree127865" class="relative "><a title="Go to page:Implementing a 3D finite element model for reinforced concrete"  href="/page-127865-en.html">Implementing a 3D finite element model for reinforced concrete</a></li><li id="tree123086" class="relative "><a title="Go to page:A probabilistic approach to design civil engineering structures"  href="/page-123086-en.html">A probabilistic approach to design civil engineering structures</a></li><li id="tree123080" class="relative "><a title="Go to page:Stability problems encountered in the finite element method"  href="/page-123080-en.html">Stability problems encountered in the finite element method</a></li><li id="tree122700" class="relative "><a title="Go to page:13th Benchmark Workshop on the Numerical Analysis of Dams"  href="/page-122700-en.html">13th Benchmark Workshop on the Numerical Analysis of Dams</a></li><li id="tree114221" class="relative "><a title="Go to page:Implementation of Dynamics for Bernoulli beam elements within Akantu"  href="/page-114221-en.html">Implementation of Dynamics for Bernoulli beam elements within Akantu</a></li><li id="tree110821" class="relative current open inpath"><a title="Go to page:Implementation of a Kirchhoff shell element"  href="/page-110821-en.html">Implementation of a Kirchhoff shell element</a></li><li id="tree69050" class="relative "><a title="Go to page:Implementation of 3D Bernoulli beams"  href="/page-69050-en.html">Implementation of 3D Bernoulli beams</a></li><li id="tree69048" class="relative "><a title="Go to page:Etude numérique d&#39;un barrage sous sollicitation thermique et séismique"  href="/page-69048-en.html">Etude numérique d&#39;un barrage sous sollicitation thermique et séismique</a></li><li id="tree69047" class="relative "><a title="Go to page:Finite element implementation on Graphical Processing Unit (GPU)"  href="/page-69047-en.html">Finite element implementation on Graphical Processing Unit (GPU)</a></li><li id="tree91037" class="relative "><a title="Go to page:Modelisation du sciage dans le béton avec XFEM"  href="/page-91037-en.html">Modelisation du sciage dans le béton avec XFEM</a></li><li id="tree91044" class="relative "><a title="Go to page:Implementation d’un code d’éléments finis en 1D"  href="/page-91044-en.html">Implementation d’un code d’éléments finis en 1D</a></li><li id="tree91046" class="relative "><a title="Go to page:Etude spectrale d’une structure"  href="/page-91046-en.html">Etude spectrale d’une structure</a></li></ul></li></ul></li></ul>
+    
+			<noscript>
+			<style type="text/css">
+			/* Tree fallback for secondary navigation */
+			.tree li ul{display:none}
+			.tree .open,.tree .open>ul{display:block}
+			</style>
+			</noscript>
+			<div class="clear"></div>
+			<div class="box box-flat-panel home-navpanel local-color coloredTextBox">
+                  <h3>
+                                Fields of Interest</h3>
+                        
+<ul>
+	<li>Mechanics of materials and structures</li>
+	<li>Fracture mechanics</li>
+	<li>Tribology</li>
+	<li>High performance scientific computing</li>
+	<li>From the atom to the continuum</li>
+</ul>
+<div class="clear"></div>
+            
+<div class="clear"></div>
+            
+<div class="clear"></div>
+<div class="clear"></div></div>
+			<div class="box two-cols contactBox">
+                  <h3>
+                                Contact</h3>
+                        
+<div class="box-col">
+	<h4>Laboratoire de Simulation en M&eacute;canique des Solides</h4>
+	<p>EPFL-ENAC-IIC-LSMS</p>
+	<p>B&acirc;timent GC - A2<br/>
+		Station 18<br/>
+		CH 1015 - Lausanne
+	</p>
+	<p>
+		<a href="http://plan.epfl.ch?room=GCA2484" title="Access map">Show on campus map</a>
+	</p>
+</div>
+<p>
+	<a href="http://search.epfl.ch/directory.do?sciper=106406">Birgitte Seem</a>
+	<br/>
+	Secretary <a href="javascript:void(location.href='mailto:'+String.fromCharCode(98,105,114,103,105,116,116,101,46,115,101,101,109,64,101,112,102,108,46,99,104)+'?')" title="Brigitte Seem e-mail">e-mail</a>
+	<br/>
+	T&eacute;l: +41 (0) 21 693 24 50<br/>
+	Fax: +41 (0) 21 693 63 40<br/>
+	<a href="http://plan.epfl.ch/?room=GCA2485" title="GC A2 485">GC A2 485</a>
+</p>
+<div class="clear"></div>
+<div class="clear"></div></div>
+			<div class="box textBox">
+                  <h3>
+                                Affiliations</h3>
+                        
+<p>
+	<strong>Institutes :</strong>
+</p>
+<ul>
+	<li>
+		<a href="http://enac.epfl.ch/page-2921-en.html">Civil Engineering Institute (IIC</a>)
+	</li>
+	<li>
+		<a href="http://sti.epfl.ch/page-63392-en.html">Institute of Materials (IMX)</a>
+	</li>
+</ul>
+<p>
+	<strong>Doctoral programs :</strong>
+</p>
+<ul>
+	<li>
+		<a href="http://phd.epfl.ch/page82101.html">
+		<span lang="EN-US">Mechanics</span>
+		</a>
+	</li>
+	<li>
+		<a href="http://phd.epfl.ch/page84375.html ">
+		<span lang="EN-US">Civil &amp; Environmental Engineering</span>
+		</a>
+	</li>
+	<li>
+		<a href="http://phd.epfl.ch/page55512.html">
+		<span lang="EN-US">Material Science &amp; Engineering</span>
+		</a>
+	</li>
+</ul>
+<p>
+	<strong>Master program :</strong>
+</p>
+<ul>
+	<li>
+		<a href="http://enac.epfl.ch/page-2910-en.html">Master program in Civil Engineering</a>
+	</li>
+	<li>
+		<a href="http://master.epfl.ch/cse">Master program in Computational Science and Engineering</a>
+	</li>
+</ul>
+<p>&nbsp;</p>
+<div class="clear"></div>
+            
+<div class="clear"></div>
+            
+<div class="clear"></div>
+<div class="clear"></div></div>
+			<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			</div>
+			<!--googleoff: index-->
+			<div id="footer" role="contentinfo">
+				<h2 class="visuallyhidden">Footer links</h2>
+				<ul>
+					<li class="sitemap">
+						<a title="Go to page: Sitemap" href="/site/lsms/sitemap">Sitemap</a>
+					</li>
+					<li>
+						<a title="Go to page: Accessibility" href="http://www.epfl.ch/accessibility.en.shtml">Accessibility</a>
+					</li>
+					<li>
+						<a title="Legal notice Legal notice" href="http://mediacom.epfl.ch/disclaimer-en">Legal notice</a>
+					</li>
+					<li class="visuallyhidden"><a title="Jump to: Top of the page" href="#top">Top of the page</a></li>
+					
+					<li>
+						<meta itemprop="datePublished" content="2016-02-23T16:52:15"/>
+						Updated&nbsp;23.02.2016
+					</li>
+					<li class="copyright">© <span itemprop="copyrightHolder">EPFL</span> <span itemprop="copyrightYear">2016</span></li>
+					<li class="login">
+						<a title="Login" href="/cms/engineName/tequila_login/site/lsms/pid/110821">Login</a>
+					</li>
+				</ul>
+				<script type="text/javascript">
+					epflJ(document).ready(function() {
+					    epflJ("#header2013").on("change", "input[type='radio']", function() {
+					        epflJ('#header_searchform').attr('action', epflJ(this).is('#search-engine-local') ? '/engineName/search/site/lsms/lang/en' : '//search.epfl.ch/process_web2010');
+					        
+					    });
+					});
+				</script>
+			</div>
+			<script type="text/javascript">epflJ(document).ready(function(){EPFL.header.init()})</script>
+			<!-- googleon: index-->
+		</div>
+		<script type='text/javascript'></script>
+	</body>
+</html>

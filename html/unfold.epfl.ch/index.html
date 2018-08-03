@@ -1,0 +1,847 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head prefix="og: http://ogp.me/ns#">
+		<script type="text/javascript" language="JavaScript">
+			var jahiaMainServletPath="/cms";
+			var jahiaContextPath ="";
+			var jahiaCoreWebdavPath ="/webdav";
+		</script>
+		<title>UNFoLD | EPFL</title>
+		<!--googleoff: index-->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="headerversion" content="3.1.1"/>
+		<meta name="headerdate" content="2018-07-18"/>
+		<link rel="shortcut icon" href="//www.epfl.ch/favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="//www.epfl.ch/css/print.css" type="text/css" media="print" />
+		<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+		<meta http-equiv="content-script-type" content="text/javascript" />
+		<meta http-equiv="content-style-type" content="text/css" />
+		<meta name="description" content="Unsteady Flow Diagnostics Lab - UNFoLD "/>
+        <meta name="keywords" content="Unsteady Flow Diagnostics, UNFoLD, EPFL "/>
+		<link href="//www.epfl.ch/css/epfl.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="//www.epfl.ch/css/applications.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="/templates/epfl/styles/homePortal.css" media="screen" rel="stylesheet" type="text/css"/>
+		<link href="/templates/epfl/styles/legacy.css" media="screen" rel="stylesheet" type="text/css"/>
+		<link href="/templates/epfl/css/jahia.css" media="all" rel="stylesheet" type="text/css"/>
+		<link href="//www.epfl.ch/css/print.css" media="print" rel="stylesheet" type="text/css" />
+		<link href="//www.epfl.ch/css/sti.css" media="all" rel="stylesheet" type="text/css"/>
+		<!-- homeLayoutValue is standard -->
+		<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript">window.jQuery||document.write(unescape("%3Cscript src='/templates/epfl/js/jquery.js' type='text/javascript'%3E%3C/script%3E"))</script>
+		<script type="text/javascript" src="/templates/epfl/js/jquery.plugins.js"></script>
+		<script type="text/javascript">var epflJ = jQuery.noConflict();</script>
+		<script type="text/javascript" src="/templates/epfl/js/epfl.js"></script>
+		<script  src="/templates/epfl/js/highlight.js"></script>
+		<script  src="/templates/epfl/js/quickclear.js"></script>
+		<script  src="/templates/epfl/js/infoscience.js"></script>
+		<script  src="//www.epfl.ch/js/epfl-cookie-consent.js "></script>
+		<script src="/templates/epfl/js/socialshare.js"></script>
+		<script type="text/javascript">EPFL.analytics.setAccount('UA-1534151-23')</script>
+		<meta property="og:title" content="UNFoLD | EPFL" />
+		<meta property="og:type" content="article" />
+		<meta property="og:url" content="http://unfold.epfl.ch/home" />
+		<!--googleon: index-->
+	</head>
+	<body itemtype="http://schema.org/WebPage" itemscope="itemscope">
+		<div id="actualContent">
+			<!--googleoff: index-->
+			<a id="top" name="top"></a>
+			<h1 class="visuallyhidden">Accessibility Links</h1>
+			<div id="accessibility" class="visuallyhidden" role="navigation">
+				<ul>
+					<li><a accesskey="0" href="http://www.epfl.ch/accessibility.en.shtml" title="Specific informations for persons with disabilities">Accessibility</a></li>
+					<li><a accesskey="1" href="#content" title="Skip the header and jump to the page content">Skip to content</a></li>
+					<li><a accesskey="2" href="#search" title="Jump to the search field" id="searchlink">Jump to search field</a></li>
+					<li><a accesskey="3" href="#main-navigation" title="Jump to the navigation within this site">Site navigation</a></li>
+					<li><a accesskey="4" href="#navigation" title="Jump to the navigation within EPFL sites">EPFL navigation</a></li>
+					<li><a accesskey="5" href="#breadcrumbs" title="Jump to the breadcrumbs navigation">Breadcrumbs navigation</a></li>
+					<li><a accesskey="6" href="#languages" title="Jump to the language selector">Language switcher</a></li>
+					<li><a accesskey="8" href="/sitemap" title="Go to the sitemap">Sitemap</a></li>
+					<li><a accesskey="9" href="mailto:webmaster@epfl.ch" title="Send an email to the technical contact">Technical contact</a></li>
+				</ul>
+			</div>
+			<h1 class="visuallyhidden">General EPFL navigation</h1>
+			<div id="header2013" role="banner" class="filler">
+				<div id="nav-logo"><a href="http://www.epfl.ch" title="EPFL homepage"><img src="//www.epfl.ch/img/epfl_small.png" /></a></div>
+				<div id="nav-menus">
+					<a id="navigation" name="navigation"></a>
+					<ul id="main-menus">
+						<li class="portal menu" id="public-menu-link">
+							<h2 class="visuallyhidden">Navigate by profile</h2>
+							<a class="main-link" href="http://www.epfl.ch/navigate.en.shtml" title="Navigate by profile"><span>You</span> are</a>
+						</li>
+						<li class="school menu" id="school-menu-link">
+							<h2 class="visuallyhidden">Navigate by school</h2>
+							<a class="main-link" href="http://www.epfl.ch/navigate.en.shtml" title="Navigate by school"><span>By</span> school</a>
+						</li>
+						<li class="short menu" id="brief-menu-link">
+							<h2 class="visuallyhidden">About EPFL</h2>
+							<a class="main-link" href="http://www.epfl.ch/navigate.en.shtml"><span>about</span> EPFL</a>
+						</li>
+					</ul>
+				</div>
+				<div id="nav-search">
+					<div id="search-box">
+						<a name="search"></a>
+						<form name="search" action="//search.epfl.ch/process_web2010" class="searchform" id="header_searchform">
+							<input type="hidden" name="lang" value="en" />
+							<input type="hidden" name="as_site_search" value="" id="header_local_site" />
+							<input type="text" class="search ui-autocomplete-input" name="q" value="" id="header_searchfield" autocomplete="off" aria-autocomplete="list" aria-haspopup="true" />
+							<div class="search-filter">
+								<a href="#" class="selected-field">Directory</a>
+								<ul class="menu hidden">
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-person" value="person" checked="checked" title="Find a person" />
+										<label for="search-engine-person" class="current" title="Find a person">Directory</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-epfl" value="epfl" title="Search within EPFL sites"/>
+										<label for="search-engine-epfl" title="Search within EPFL sites">EPFL websites</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-place" value="place" title="Find a place"/>
+										<label for="search-engine-place" title="Find a place">Place</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-local" value="local"  title="Search within this site"/>
+										<label for="search-engine-local" title="Search within this site">This website</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-eduweb" value="eduweb" title="Find courses"/>
+										<label for="search-engine-eduweb" title="Find courses">Courses</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-publication" value="publication" title="Find publications"/>
+										<label for="search-engine-publication" title="Find publications">Publications</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-actuweb" value="actuweb" title="Find news"/>
+										<label for="search-engine-actuweb" title="Find news">News</label>
+									</li>
+									<li>
+										<input class="hidden" type="radio" name="engine" id="search-engine-unit" value="unit" title="Find EPFL units"/>
+										<label for="search-engine-unit" title="Find EPFL units">EPFL units</label>
+									</li>
+								</ul>
+							</div>
+							<button type="submit" class="search-button local-color"  title="Search">Search</button>
+						</form>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<!--googleon: index-->
+			<div id="main-content" class=" theme-sti page-129545intranet">
+			<div class="header">
+			<h1>
+                    <a href="/home" title="UNFoLD ">
+                        <span>Unsteady flow diagnostics laboratory</span>&nbsp;<acronym title="Unsteady flow diagnostics laboratory" class="local-color-text">UNFoLD</acronym></a>
+
+                    </h1>
+			<div class="clear"></div>
+			<h2 class="visuallyhidden">Breadcrumb navigation</h2>
+			<ul id="breadcrumbs" title="EPFL breadcrumb" role="navigation">
+			<li>
+			<a title="Go to page: EPFL Homepage" href="http://www.epfl.ch">EPFL</a>
+			</li>
+			<li>
+                        <a href="http://sti.epfl.ch/en" title="Go to page: STI">STI</a>
+                    </li>
+			<li>
+                        <a href="http://igm.epfl.ch" title="Go to page: IGM">IGM</a>
+                    </li>
+			<li
+				class="last">
+			UNFoLD</li>
+			</ul>
+			<script type="text/javascript">
+				epflJ(document).ready(function() {
+				    epflJ("#dropdown0").addClass("inpath");
+				    if (129545 == 0) {
+				        epflJ("#dropdown0").addClass("current");
+				    }
+				    epflJ("#updatesubmenu").addClass("inpath");
+				    epflJ("#deletesubmenu").addClass("inpath");
+				});
+			</script>
+			<div id="level2PageId" style="display:none"></div>
+			<!--googleoff: index-->
+			<h2 class="visuallyhidden">Language switcher</h2>
+			<ul id="languages" title="Choose language">
+			<li class='current'>
+			<span>English</span>
+			</li>
+			</ul>
+			<div class="clear"></div>
+			</div>
+			<h2 class="visuallyhidden">Go to</h2>
+			<div id="main-navigation" class="navigation-bar">
+			<a class="visuallyhidden" href="/" title="Go to the site homepage">Site homepage</a>
+			<ul class="topnav" role="navigation">
+    <li class="homeLink">
+            <a href="/home" title="UNFoLD "><span>UNFoLD</span></a>
+        </li>
+    <li id="dropdown134688" class="dropdown"><a  title="Go to level 1 page: People" href="/people">People</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/people">People</a>
+                    </li>
+            <li id="dropdown144967"><a  title="Go to page: Former lab members" href="/alumni">Former lab members</a></li></ul></li><li id="dropdown148514" class="dropdown"><a  title="Go to level 1 page: Lab" href="/x-perimentals">Lab</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/x-perimentals">Lab</a>
+                    </li>
+            <li id="dropdown153327"><a  title="Go to page: Experimental facilities" href="/x-perimentals/sharx">Experimental facilities</a></li><li id="dropdown153331"><a  title="Go to page: Experimental rigs" href="/page-153331-en.html">Experimental rigs</a></li><li id="dropdown153328"><a  title="Go to page: Experimental equipment" href="/x-perimentals/equipment">Experimental equipment</a></li></ul></li><li id="dropdown152319" class="dropdown"><a  title="Go to level 1 page: Research" href="/research">Research</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/research">Research</a>
+                    </li>
+            <li id="dropdown153316"><a  title="Go to page: Dynamic stall" href="/research/dynamicstall">Dynamic stall</a></li><li id="dropdown153317"><a  title="Go to page: Vortex dynamics" href="/research/vortexdynamics">Vortex dynamics</a></li><li id="dropdown153318"><a  title="Go to page: Low Re aerodynamics" href="/research/lowReaerodynamics">Low Re aerodynamics</a></li><li id="dropdown153319"><a  title="Go to page: Vertical axis wind turbines" href="/research/VAWT">Vertical axis wind turbines</a></li></ul></li><li id="dropdown134690" class="dropdown"><a  title="Go to level 1 page: Publications" href="/publications">Publications</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/publications">Publications</a>
+                    </li>
+            <li id="dropdown135276"><a  title="Go to page: Journal articles" href="/publications/journalarticles">Journal articles</a></li><li id="dropdown135277"><a  title="Go to page: Book contributions" href="/publicatons/bookcontributions">Book contributions</a></li><li id="dropdown135278"><a  title="Go to page: Conference Proceedings" href="/publications/proceedings">Conference Proceedings</a></li></ul></li><li id="dropdown134693" class="dropdown"><a  title="Go to level 1 page: Teaching" href="/teaching">Teaching</a></li><li id="dropdown134694" class="dropdown"><a  title="Go to level 1 page: Student projects" href="/studentprojects">Student projects</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/studentprojects">Student projects</a>
+                    </li>
+            <li id="dropdown139561"><a  title="Go to page: Past projects" href="/pastprojects">Past projects</a><ul></ul></li></ul></li><li id="dropdown146400" class="dropdown"><a  title="Go to level 1 page: Media" href="/page-146400-en.html">Media</a><ul class="menu hidden" style="padding-top:0">
+                    <li class="level1">
+                        <a href="/page-146400-en.html">Media</a>
+                    </li>
+            <li id="dropdown148361"><a  title="Go to page: Previous pictures of the month" href="/page-148361-en.html">Previous pictures of the month</a></li><li id="dropdown152067"><a  title="Go to page: Pictures of the team" href="/page-152067-en.html">Pictures of the team</a></li></ul></li><li id="dropdown139564" class="dropdown"><a  title="Go to level 1 page: Join us" href="/joinus">Join us</a></li></ul>
+    <script>
+        jQuery(".level1").hover(
+                function () {
+                    jQuery(this).addClass('to');
+                },
+                function () {
+                    jQuery(this).removeClass('to');
+                }
+        );
+    </script>
+
+    
+			<div class="clear"></div>
+			</div>
+			<noscript>
+			<style type="text/css">
+			/* Hoverintent fallback for main navigation */
+			#main-navigation .dropdown:hover .menu.hidden{left:0}
+			</style>
+			</noscript>
+			<div id="tools" role="toolbar">
+			<div class="socialshare" style="float: left;">
+			<span class="label"
+				style="background: none;position: relative;top: 3px;padding-right: 10px;">
+			Share:
+			</span>
+			</div>
+			<img src="/templates/epfl/img/socialshare-icons/grey-facebook-round.png" class="icon-facebook social-icon" title="Share on Facebook" alt="Share on Facebook">
+			<img src="/templates/epfl/img/socialshare-icons/grey-twitter-round.png" class="icon-twitter social-icon" title="Share on Twitter" alt="Share on Twitter">
+			<img src="/templates/epfl/img/socialshare-icons/grey-linkedin-round.png" class="icon-linkedin social-icon" title="Share on LinkedIn" alt="Share on LinkedIn">
+			<img src="/templates/epfl/img/socialshare-icons/grey-googleplus-round.png" class="icon-googleplus social-icon" title="Share on Google+" alt="Share on Google+">
+			<img src="/templates/epfl/img/socialshare-icons/grey-mail-round.png" class="icon-email social-icon" title="Share by mail" alt="Share on Google+">
+			<a id="social-share-email-link" class='hidden' href="mailto:?subject=">UNFoLD</a>
+			<a id="social-share-email-link-2" class='hidden' href="mailto:?subject=">UNFoLD</a>
+			</div>
+			<!--googleon: index-->
+			<div id="content" class="content" role="main">
+			<div id="729647" class="  textBox" style="">
+               
+<p style="text-align: justify; margin-left: 40px;">Our lab focusses on the investigation of unsteady flow phenomena by combining high spatially and temporally resolved flow field measurements with - what we refer to as - a fluid dynamical differential diagnosis. We develop methodologies to help bridge the gap between our observations and understanding of the development and interaction of characteristic flow structures (e.g. vortices) and technically relevant quantities, such as aerodynamic forces or power output, with applications in biological and bio-inspired flight, wind turbine rotor blade aerodynamics, etc.</p>
+<div class="clear"></div>
+            
+<div class="clear"></div>
+            
+<div class="clear"></div>
+</div>
+			<div id="837910" class="  bigButtonsBox" style="">
+               
+<!--  bigButtonList.size: 4 -->
+
+        <div class="big-buttons" style="display:none;">
+                            <ul>
+                <li class="local-color">
+
+                    <a class="button-link" href="/people" title="">
+                                <img class="image" src="/files/content/sites/unfold/files/images/thumbnails/thumb_people.png" alt=""/><span class="label">People</span>
+                            </a>
+
+                    </li>
+<li class="local-color-light">
+
+                    <a class="button-link" href="/x-perimentals" title="">
+                                <img class="image" src="/files/content/sites/unfold/files/images/thumbnails/thumb_exp.png" alt=""/><span class="label">Lab</span>
+                            </a>
+
+                    </li>
+<li class="local-color-dark">
+
+                    <a class="button-link" href="/research" title="">
+                                <img class="image" src="/files/content/sites/unfold/files/images/thumbnails/thumb_magic.png" alt=""/><span class="label">Research</span>
+                            </a>
+
+                    </li>
+<li class="local-color-down">
+
+                    <a class="button-link" href="/joinus" title="">
+                                <img class="image" src="/files/content/sites/unfold/files/images/thumbnails/thumb_openpos.png" alt=""/><span class="label">Open positions</span>
+                            </a>
+
+                    </li>
+</ul></div>
+                </div>
+			<div id="771325" class="  snippetsBox" style="">
+               <h3>
+
+                                News</h3>
+                        
+<!-- templateSet: web2010 homeLayoutValue: standard index: 0  index % 4:0-->
+				
+				<div class="snippets">
+							<ul class="news-list simple-layout">
+					<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newpaper.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>18-19.07.2018</a>
+											</h2>
+								<p>
+								<p>Diego and Sabrina&nbsp;presented their first experimental results at the <a href="http://lisbon-lasersymposium.org/lxlaser2018">19th International Symposium</a> on Applications of Laser and Imaging Techniques to Fluid Mechanics in Lisbon, Portugal.&nbsp;The&nbsp;accompanying papers "<a href="http://www.lisbon-lasersymposium.org/static/upload/ow74/events/ev142/email/template/217_paper_LXLASER2018_FINAL.pdf">Lagrangian analysis of the formation of vortices on a rotating flat plate</a>" and "<a href="http://www.lisbon-lasersymposium.org/static/upload/ow74/events/ev142/email/template/107_paper_LXLASER2018_FINAL.pdf">Dynamic stall vortex shedding and associated load fluctuations</a>" are&nbsp;now online. Special thanks to Emilie, Guillaume, Agastya, and Julien, who significantly contributed to the work that was presented!</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 1  index % 4:1-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>15.07.2018</a>
+											</h2>
+								<p>
+								<span class="date">UNFoLD welcomes two new members</span>
+								<p>Guosheng is our new post-doc and Gabriele is our summer intern from the&nbsp;Talenti Neodiplomati&nbsp;2018 program&nbsp;</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 2  index % 4:2-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>09.07.2018</a>
+											</h2>
+								<p>
+								<p>Rohit&nbsp;has joined UNFoLD&nbsp;as&nbsp;a visiting PhD student from the University of Illinois at Urbana-Champaign</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 3  index % 4:3-->
+				
+				<li style="position: relative">
+					
+						<a href="http://iopscience.iop.org/article/10.1088/1742-6596/1037/2/022017" title="21.06.2018">
+									<img src="/files/content/sites/unfold/files/images/icons/icon_newpaper.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/></a>
+							<div class="news-text">
+						
+							<h2>
+										<a title="21.06.2018" href="http://iopscience.iop.org/article/10.1088/1742-6596/1037/2/022017">21.06.2018</a>
+											</h2>
+								<p>
+								<p>Julien presented his latest work at the Torque 2018 conference in Milan, Italy.&nbsp;The accompanying paper "Critical evolution of leading edge suction during dynamic stall" by Julien Deparday and Karen Mulleners&nbsp;is now online.</p>
+<a href="http://iopscience.iop.org/article/10.1088/1742-6596/1037/2/022017" title="Read more">
+							  			<span class="read-more"></span>
+									</a>
+								</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 4  index % 4:0-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>01.06.2018</a>
+											</h2>
+								<p>
+								<span class="date">UNFoLD welcomes a new member</span>
+								<p>Sebastien has joined UNFoLD&nbsp;as PhD student</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 5  index % 4:1-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>15.04.2018</a>
+											</h2>
+								<p>
+								<span class="date">UNFoLD welcomes a new member</span>
+								<p>Agastya has joined UNFoLD as a research intern</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 6  index % 4:2-->
+				
+				<li style="position: relative">
+					
+						<a href="https://aip.scitation.org/doi/10.1063/1.5006527" title="21.03.2018">
+									<img src="/files/content/sites/unfold/files/images/icons/icon_newpaper.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/></a>
+							<div class="news-text">
+						
+							<h2>
+										<a title="21.03.2018" href="https://aip.scitation.org/doi/10.1063/1.5006527">21.03.2018</a>
+											</h2>
+								<p>
+								<p>Paper: "The role of surface vorticity&nbsp;during unsteady separation" by Matthew Melius, Karen Mulleners, and Raul Cal has been accepted for publication in the Physics of Fluids.&nbsp;</p>
+<a href="https://aip.scitation.org/doi/10.1063/1.5006527" title="Read more">
+							  			<span class="read-more"></span>
+									</a>
+								</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 7  index % 4:3-->
+				
+				<li style="position: relative">
+					
+						<a href="https://link.springer.com/epdf/10.1007/s12650-018-0473-7?author_access_token=xqoYlw4oDhcV9fMAaUFREfe4RwlQNchNByi7wbcMAY7OWTpXlCoNACHgmHMfDH_9vL3wzwbUBzcageyF8AZRXerZ8_WL8c-h2AhAbE5Tpoqzdx8SLot7vCH7gjSXiAl-p550FJixFmZD7qmYMtC1Yw%3D%3D" title="22.01.2018">
+									<img src="/files/content/sites/unfold/files/images/icons/icon_newpaper.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/></a>
+							<div class="news-text">
+						
+							<h2>
+										<a title="22.01.2018" href="https://link.springer.com/epdf/10.1007/s12650-018-0473-7?author_access_token=xqoYlw4oDhcV9fMAaUFREfe4RwlQNchNByi7wbcMAY7OWTpXlCoNACHgmHMfDH_9vL3wzwbUBzcageyF8AZRXerZ8_WL8c-h2AhAbE5Tpoqzdx8SLot7vCH7gjSXiAl-p550FJixFmZD7qmYMtC1Yw%3D%3D">22.01.2018</a>
+											</h2>
+								<p>
+								<p>Paper: "Cross-correlation analysis of synchronized PIV and microphone measurements of an oscillating airfoil" by Lars Siegel, Klaus Ehrenfried, Claus Wagner, Karen Mulleners, and Arne Henning&nbsp;has been accepted for publication in the Journal of Visualization.&nbsp;</p>
+<a href="https://link.springer.com/epdf/10.1007/s12650-018-0473-7?author_access_token=xqoYlw4oDhcV9fMAaUFREfe4RwlQNchNByi7wbcMAY7OWTpXlCoNACHgmHMfDH_9vL3wzwbUBzcageyF8AZRXerZ8_WL8c-h2AhAbE5Tpoqzdx8SLot7vCH7gjSXiAl-p550FJixFmZD7qmYMtC1Yw%3D%3D" title="Read more">
+							  			<span class="read-more"></span>
+									</a>
+								</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 8  index % 4:0-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>15.01.2018</a>
+											</h2>
+								<p>
+								<span class="date">UNFoLD welcomes another new member</span>
+								<p>Diego has joined UNFoLD&nbsp;as PhD student</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 9  index % 4:1-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>03.01.2018</a>
+											</h2>
+								<p>
+								<span class="date">UNFoLD welcomes 2 new members</span>
+								<p>Adrien and Sabrina have joined UNFoLD&nbsp;as PhD students</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 10  index % 4:2-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_dummy.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>08.12.2017</a>
+											</h2>
+								<p>
+								<span class="date">Water channel inauguration</span>
+								
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<p>Sharx has been officially inaugurated!<br />
+	<b>s</b>harx&nbsp;is a facility for <strong>h</strong>ydro and <strong>a</strong>erodynamic <strong>r</strong>esearch e<strong>x</strong>periments&nbsp;<br />
+	more on sharx &nbsp;<a href="https://unfold.epfl.ch/x-perimentals/sharx"> <i class="fa fa-hand-o-right" style="font-size:16px"></i> </a>
+</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 11  index % 4:3-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newpaper.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>06.12.2017</a>
+											</h2>
+								<p>
+								<p>Paper "<a href="https://arc.aiaa.org/doi/abs/10.2514/1.J056468">Flow field and force evolution for a symmetric hovering flat plate wing</a>" by Swathi Krishna, Melissa A. Green, and Karen Mulleners&nbsp;has been accepted for publication in the AIAA&nbsp;Journal.&nbsp;</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 12  index % 4:0-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>02.10.2017</a>
+											</h2>
+								<p>
+								<span class="date">UNFoLD welcomes 2 new members</span>
+								<p>Julien is our new post-doc and Alex is visiting from Germany for his master thesis.&nbsp;</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 13  index % 4:1-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_dummy.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>29.09.2017</a>
+											</h2>
+								<p>
+								<span class="date">Winter is coming ...</span>
+								<p style="text-align: left;">We said our water tunnel was going to be ready by the end of summer.<br />
+	Thanks to Robert and Marco for a great job!
+</p>
+<p style="text-align: center;"><img alt="" src="/files/content/sites/unfold/files/movies/20170929.gif" style="width: 450px; height: 225px;" /></p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 14  index % 4:2-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/SNSF_logo.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>29.09.2017</a>
+											</h2>
+								<p>
+								<span class="date">Funding granted </span>
+								<p>Our project <em>Reconfigurable airfoil shape and orientation for improved performance during stroke and flow reversal </em>with Prof. Jamie Paik&nbsp;as&nbsp;partner will be funded by the Swiss National Science Foundation.</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 15  index % 4:3-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_graduation.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>31.08.2017</a>
+											</h2>
+								<p>
+								<span class="date">First doctoral graduate at UNFoLD</span>
+								<p>We proudly&nbsp;announce that&nbsp;Swathi&nbsp;has successfully defended her doctoral&nbsp;thesis entitled &#39;<em>Unsteady fluid dynamics around a hovering flat plate wing</em>&#39; during the private defence. Congratulations Swathi!&nbsp;</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 16  index % 4:0-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_dummy.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>22.08.2017</a>
+											</h2>
+								<p>
+								<span class="date">A much anticipated delivery!</span>
+								<p><img alt="" src="/files/content/sites/unfold/files/images/facilities/IMG_20170822.JPG" style="width: 325px; height: 501px;" /></p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 17  index % 4:1-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newpaper.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>03.08.2017</a>
+											</h2>
+								<p>
+								<p>Paper "Analysis of intermittent trailing edge vortex shedding using recurrence plots" by Karen Mulleners&nbsp;and Markus R&uuml;tten&nbsp;has been accepted for publication in the AIAA&nbsp;Journal.</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 18  index % 4:2-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>01.06.2017</a>
+											</h2>
+								<p>
+								<p>Achal has joined UNFoLD as a research intern</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 19  index % 4:3-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/blokeschlab/files/SNSF_logo.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>19.05.2017</a>
+											</h2>
+								<p>
+								<span class="date">Funding granted for collaborative research project on aeroacoustics</span>
+								<p>SNSF and DFG have granted us funding for the collaborative research project&nbsp;<strong>Combined aeroacoustic and flow diagnostic analysis of the motion induced sound generation by an oscillating airfoil with active flap</strong>&nbsp;proposed by us in collabortation with&nbsp;<span style="font-family: Arial, Helvetica, sans-serif; font-size: 13px;">Arne Henning from <a href="http://www.dlr.de/as/">DLR in G&ouml;ttingen</a>.&nbsp;</span></p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 20  index % 4:0-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/blokeschlab/files/SNSF_logo.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>15.05.2017</a>
+											</h2>
+								<p>
+								<span class="date">Assistant Professor Energy Grant awarded</span>
+								<p><span style="font-family: 'Helvetica Neue'; font-size: 12px; font-style: normal;">We received a<a href="http://www.snf.ch/de/fokusForschung/newsroom/Seiten/news-170712-ap-energy-grants-und-ambizione-energy-13-beitraege-zugesprochen.aspx"> 2017 AP Energy Grant from the Swiss National Science Foundation</a> for our project </span><b style="font-family: 'Helvetica Neue'; font-size: 12px;">smart-H</b><span style="font-family: 'Helvetica Neue'; font-size: 12px; font-style: normal;"> to investigate dynamic stall on H-type wind turbines</span><span style="font-family: 'Helvetica Neue'; font-size: 12px; font-style: normal;">.&nbsp;</span></p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 21  index % 4:1-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>15.03.2017</a>
+											</h2>
+								<p>
+								<p>&nbsp;Guillaume has joined UNFoLD as a PhD student</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 22  index % 4:2-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_dummy.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>27.02.2017</a>
+											</h2>
+								<p>
+								<span class="date">La La Laser</span>
+								<p>Thanks to Frank from <a href="http://www.ila5150.de">ILA_5150</a> for the training session and the installation of our new PIV systems</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 23  index % 4:3-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newmember.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>02.02.2017</a>
+											</h2>
+								<p>
+								<p>Sebastian has joined UNFoLD as a visiting student</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+<!-- templateSet: web2010 homeLayoutValue: standard index: 24  index % 4:0-->
+				
+				<li style="position: relative">
+					
+						<img src="/files/content/sites/unfold/files/images/icons/icon_newpaper.png" class="news-img" alt="&copy; 2015 EPFL" title="&copy; 2015 EPFL"/><div class="news-text">
+						
+							<h2>
+										<a>19.01.2017</a>
+											</h2>
+								<p>
+								<p>Paper "<a href="http://arc.aiaa.org/doi/abs/10.2514/1.J055497">Flow development on a flat plate wing subjected to a stream-wise acceleration</a>" by Karen Mulleners, Peter Mancini, and <a href="http://joneslab.umd.edu/index.html">Anya R Jones</a> has been accepted for publication in the AIAA&nbsp;Journal.&nbsp;</p>
+</p>
+						</div>
+						<div style="clear:both"></div>
+						
+						</li>
+</ul>
+				</div>
+				<div class="clear"></div>
+		</div>
+			<div class="clear"></div>
+			<div class="clear"></div>
+			</div>
+			<div class="right-col" role="complementary">
+			<div id="726515" class="box  textBox" style="">
+               
+<p style="text-align: center;"><img alt="Unsteady Flow Diagnostics Lab - UNFoLD" src="/files/content/sites/unfold/files/images/logo_UNFoLD.png" style="width: 250px; height: 120px;" /></p>
+<div class="clear"></div>
+            
+<div class="clear"></div>
+            
+<div class="clear"></div>
+</div>
+			<div id="837922" class="box  textBox" style="">
+               
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<div class="clear"></div>
+            
+<div class="clear"></div>
+            
+<div class="clear"></div>
+</div>
+			<div id="794559" class="box  textBox" style="">
+               <h3>
+
+                                Picture of the month</h3>
+                        
+<p><img alt="July 2018" src="https://documents.epfl.ch/users/m/mu/mullener/www/2018_pom/july.jpg" style="width: 325px; height: 433px;" /></p>
+<div class="clear"></div>
+            
+<div class="clear"></div>
+            
+<div class="clear"></div>
+</div>
+			<div id="726196" class="box box-flat-panel home-navpanel local-color  coloredTextBox" style="">
+               <h3>
+
+                                Contact</h3>
+                        
+<p>EPFL STI IGM UNFoLD <br />
+	<a target="_blank" href="http://plan.epfl.ch/?room=MED+0+2922&amp;lang=en">MED 0 2922</a> (Batiment MED) <br />
+	Station 9 <br />
+	CH-1015 Lausanne<br />
+	<a href="https://jabberguest.epfl.ch/call/33817 ">+41 21 69 33817</a>
+</p>
+<div class="clear"></div>
+            
+<div class="clear"></div>
+            
+<div class="clear"></div>
+</div>
+			<div id="859085" class="box  textBox" style="">
+               
+<a class="twitter-timeline" href="https://twitter.com/UNFoLD_EPFL?ref_src=twsrc%5Etfw">Tweets by UNFoLD_EPFL</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<div class="clear"></div>
+            
+<div class="clear"></div>
+            
+<div class="clear"></div>
+</div>
+			<div class="clear"></div>
+			<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			</div>
+			<!--googleoff: index-->
+			<div id="footer" role="contentinfo">
+				<h2 class="visuallyhidden">Footer links</h2>
+				<ul>
+					<li class="sitemap">
+						<a title="Go to page: Sitemap" href="/site/unfold/sitemap">Sitemap</a>
+					</li>
+					<li>
+						<a title="Go to page: Accessibility" href="http://www.epfl.ch/accessibility.en.shtml">Accessibility</a>
+					</li>
+					<li>
+						<a title="Legal notice Legal notice" href="http://mediacom.epfl.ch/disclaimer-en">Legal notice</a>
+					</li>
+					<li class="visuallyhidden"><a title="Jump to: Top of the page" href="#top">Top of the page</a></li>
+					
+					<li>
+						<meta itemprop="datePublished" content="2018-07-22T13:01:15"/>
+						Updated&nbsp;22.07.2018
+					</li>
+					<li class="copyright">© <span itemprop="copyrightHolder">EPFL</span> <span itemprop="copyrightYear">2016</span></li>
+					<li class="login">
+						<a title="Login" href="/cms/engineName/tequila_login/site/unfold/pid/129545">Login</a>
+					</li>
+				</ul>
+				<script type="text/javascript">
+					epflJ(document).ready(function() {
+					    epflJ("#header2013").on("change", "input[type='radio']", function() {
+					        epflJ('#header_searchform').attr('action', epflJ(this).is('#search-engine-local') ? '/engineName/search/site/unfold/lang/en' : '//search.epfl.ch/process_web2010');
+					        
+					    });
+					});
+				</script>
+			</div>
+			<script type="text/javascript">epflJ(document).ready(function(){EPFL.header.init()})</script>
+			<!-- googleon: index-->
+		</div>
+		<script type='text/javascript'></script>
+	</body>
+</html>

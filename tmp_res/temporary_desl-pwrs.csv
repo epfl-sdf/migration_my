@@ -1,0 +1,5 @@
+domain,page,document,size [KB],status_code
+http://desl-pwrs.epfl.ch,http://desl-pwrs.epfl.ch/cms/lang/en/pid/80020,,,404.0
+http://desl-pwrs.epfl.ch,http://desl-pwrs.epfl.ch/tequila/help?language=fr,,,404.0
+http://desl-pwrs.epfl.ch,http://desl-pwrs.epfl.ch/miscelleanous,,,404.0
+http://desl-pwrs.epfl.ch,http://desl-pwrs.epfl.ch/cms/lang/en/pid/80022,,,404.0

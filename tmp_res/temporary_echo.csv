@@ -1,0 +1,6 @@
+domain,page,document,size [KB],status_code
+http://echo.epfl.ch,https://echo.epfl.ch/xmlrpc.php?rsd,,,405.0
+http://echo.epfl.ch,https://echo.epfl.ch/wp-includes/wlwmanifest.xml,,,404.0
+http://echo.epfl.ch,https://echo.epfl.ch/wp-login.php,,,403.0
+http://echo.epfl.ch,http://echo.epfl.ch/cms,,,404.0
+http://echo.epfl.ch,http://echo.epfl.ch/page-127631-fr.html,,,404.0

@@ -1,0 +1,4 @@
+domain,page,document,size [KB],status_code
+http://lqm.epfl.ch,http://lqm.epfl.ch/Jahia/engineName/updatecontainer/site/lqm/op/edit/pid/www.epfl.ch,,,500.0
+http://lqm.epfl.ch,http://lqm.epfl.ch/page41376-en.html,,,404.0
+http://lqm.epfl.ch,http://lqm.epfl.ch/tequila/help?language=fr,,,404.0

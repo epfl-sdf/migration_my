@@ -7,7 +7,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import requests
 
-bad_extensions = ['css', 'js', 'ico', 'png', 'jpg', 'pdf']
+bad_extensions = ['css', 'js', 'ico', 'png', 'jpg', 'pdf', 'tar', 'gz', 'zip',
+                  'ppt', 'doc', 'docx', 'xls', 'xlsx', 'pptx']
 prefix = '://documents.epfl.ch/'
 
 
@@ -25,16 +26,22 @@ def links_in_page(domain_url, page_url):
         if not response.ok:
             print("Error with page", page_url, "status", response.status_code)
             return None, None, pd.DataFrame(), response.status_code
-        soup = BeautifulSoup(response.text, 'html.parser')
+        try:
+            soup = BeautifulSoup(response.text, 'html.parser')
+        except TypeError as type_error:
+            print(response.text)
+            return None, None, pd.DataFrame(), 418
+        # print(response.text)
         df_temp = parse_gallery(soup, domain_url, page_url)
-        regObj = re.compile('^(/[^/].+|' + domain_url + '.+)')
+        name = name_extractor(domain_url)
+        regObj = re.compile('^(/[^/].+|(http.?://(www\.)?)?' + name + '(\.epfl)?\.ch.+)')
         for elem in soup.find_all(href=True):
             tag = 'href'
             link = elem[tag]
             # matching string
             result = regObj.match(link)
             # If link matches domain url pattern
-            prefix = domain_url
+            prefix = name+".epfl.ch"
             # If link matches '/' pattern
             forward_slash = '/'
             if not result:
@@ -60,9 +67,12 @@ def links_in_page(domain_url, page_url):
         error_message = 'The request timed out'
     except requests.exceptions.ConnectionError:
         error_message = 'A Connection error occurred.'
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.RequestException as err:
         error_message = 'There was an ambiguous exception that' +\
-            'occurred while handling your request : ' + str(e)
+            'occurred while handling your request : ' + str(err)
+    if not response:
+        print("Could not get connection on page",page_url)
+        return links, error_message, df_temp, 418
     return links, error_message, df_temp, response.status_code
 
 
@@ -104,7 +114,9 @@ def explore_domain(domain):
                     d = {
                         'domain': [domain],
                         'page': [page],
-                        'status_code': [stat_code]
+                        'document': [''],
+                        'status_code': [stat_code],
+                        'size [KB]': float('NaN')
                     }
                     df_temp = pd.DataFrame(data=d)
                 df_domain = pd.concat([df_domain, df_temp], axis=0, sort=True)
@@ -210,13 +222,16 @@ def recover(domain):
     filename = base_filename + "_" + domain_name + ".csv"
     try:
         df_recovered = pd.read_csv(filename)
+        lines = df_recovered.shape[0]
+        # if lines < 20:
+        #     return pd.DataFrame()
         return df_recovered
     except FileNotFoundError:
         return pd.DataFrame()
 
 
 def name_extractor(url):
-    return re.sub(r"http.?://([^/.]*)\.epfl\.ch$", r"\1", url)
+    return re.sub(r"http.?://(?:www\.)?([^/.]*)(?:\.epfl)?\.ch.*$", r"\1", url)
 
 
 if __name__ == "__main__":

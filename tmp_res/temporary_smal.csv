@@ -1,0 +1,8 @@
+domain,page,document,size [KB],status_code
+http://smal.epfl.ch,http://smal.epfl.ch/site/smal/sitemap,,,404.0
+http://smal.epfl.ch,http://smal.epfl.ch/sitemap,,,404.0
+http://smal.epfl.ch,http://smal.epfl.ch/tequila/help?language=fr,,,404.0
+http://smal.epfl.ch/,http://smal.epfl.ch/page-137864-en.html/,https://documents.epfl.ch/users/s/st/steinach/www/group%20pictures/2015_08.jpg,1079.722,
+http://smal.epfl.ch/,http://smal.epfl.ch/page-137864-en.html/,https://documents.epfl.ch/users/s/st/steinach/www/group%20pictures/2014-12.jpg,1134.599,
+http://smal.epfl.ch/,http://smal.epfl.ch/page-137864-en.html/,https://documents.epfl.ch/users/s/st/steinach/www/group%20pictures/2016-09.jpg,853.965,
+http://smal.epfl.ch/,http://smal.epfl.ch/page-137864-en.html/,https://documents.epfl.ch/users/s/st/steinach/www/group%20pictures/2016-07.jpg,749.5210000000001,

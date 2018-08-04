@@ -1,0 +1,4 @@
+domain,page,document,size [KB],status_code
+http://lbs.epfl.ch,https://lbs.epfl.ch/wp-login.php,,,403.0
+http://lbs.epfl.ch,https://lbs.epfl.ch/xmlrpc.php?rsd,,,405.0
+http://lbs.epfl.ch,https://lbs.epfl.ch/wp-includes/wlwmanifest.xml,,,404.0

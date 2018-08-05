@@ -2,7 +2,7 @@
 #Petit script pour juste aspirer que les .html d'un site web pour faire des tests en local
 #ATTENTION: ça été fait pour une structure perso !
 #faudra modifier le script pour d'autres structures
-#zf180803.1156
+#zf180805.1538
 
 #source: https://stackoverflow.com/questions/22614331/authenticate-on-wordpress-with-wget
 
@@ -33,7 +33,10 @@ cd html
 
 wget \
     --user-agent="$agent" \
-    -E -m -e robots=off –w 10 --no-parent -A "*.html" "$site"
+    -E -m -e robots=off –w 10 --no-parent -R "*.jpg,*.mp3,*.png,*.pdf,*.mpg,*.zip,*.JPG" "$site"
+
+
+#    -E -m -e robots=off –w 10 --no-parent -A "*.html" "$site"
 
 #    -p -k -E -m -e robots=off –w 2 --no-parent "$site"
 

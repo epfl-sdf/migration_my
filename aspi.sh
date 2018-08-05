@@ -31,13 +31,15 @@ echo $site
 mkdir html
 cd html
 
-wget \
-    --user-agent="$agent" \
-    -E -m -e robots=off –w 10 --no-parent -R "*.jpg,*.mp3,*.png,*.pdf,*.mpg,*.zip,*.JPG" "$site"
+wget --user-agent="Mozilla/5.0" -E -m -e robots=off –w 10 --no-parent -X "/files,/templates,/cms/engineName" "$site"
 
 
+
+#wget \
+#    --user-agent="$agent" \
 #    -E -m -e robots=off –w 10 --no-parent -A "*.html" "$site"
-
+#    -E -m -e robots=off –w 10 --no-parent -R "*.jpg,*.mp3,*.png,*.pdf,*.mpg,*.zip,*.JPG" "$site"
+#    -E -m -e robots=off –w 10 --no-parent -A "*.html" "$site"
 #    -p -k -E -m -e robots=off –w 2 --no-parent "$site"
 
 

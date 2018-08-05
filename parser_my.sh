@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour parser toutes les pages de Jahia à la recherche de documents 'my'
-#zf180805.2354
+#zf180806.0031
 
 echo -e " 
 
@@ -25,9 +25,7 @@ for i in $zcsv ; do
         if [[ $zline == *"documents.epfl.ch"* ]]; then
 #echo "yyy"
 #            echo -e "\n"$i
-            echo $zline | sed 's/"/\n/g' | grep "documents.epfl.ch" | grep -i -E ".jpg|.png|.gif|.pdf|.doc|.docx"
-#            echo $zline | sed 's/"/\n/g' | grep "documents.epfl.ch" | grep -i -e ".jpg" -e ".png" -e ".gif" -e ".pdf" -e ".doc" -e ".docx"
-
+            echo $zline | sed 's/"/\n/g' | grep "documents.epfl.ch" | egrep -i ".jpg|.png|.gif|.pdf"
         fi
 
     done < $i

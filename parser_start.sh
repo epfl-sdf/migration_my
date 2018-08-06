@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour lancer toute la moulinette pour parser les istes et calculer la taille golbale des documents 'my'
-#zf180806.0038
+#zf180806.1630
 
 echo -e " 
 
@@ -24,6 +24,9 @@ find ./html |grep '\.html' |sort > liste_pages.csv
 
 # parse toutes les pages de JAHIA à la recherche de documents 'my'
 ./parser_my.sh > liste_url_documents_brute.csv
+
+# compte le nombre de documents dans la liste brute 'my'
+wc liste_url_documents_brute.csv
 
 # élimine les doublons dans les documents 'my'
 cat liste_url_documents_brute.csv |sort | uniq > liste_url_documents_uniq.csv

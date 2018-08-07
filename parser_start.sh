@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour lancer toute la moulinette pour parser les istes et calculer la taille golbale des documents 'my'
-#zf180807.1528
+#zf180807.1550
 
 echo -e " 
 
@@ -16,9 +16,9 @@ screen -list            pour lister tous les screen en fonctionement
 read -p "appuyer une touche pour démarrer parser_start.sh"
 echo "C'est parti..."
 
-# aspire tous les sites JAHIA, cela prend 20mn !
-rm -Rf html
-./batch_aspi.sh
+# aspire tous les sites JAHIA, cela prend entre 20mn et 50mn !
+#rm -Rf html
+#./batch_aspi.sh
 
 # crée la liste de toutes les pages html de JAHIA
 find ./html |grep '\.html' |sort > liste_pages.csv

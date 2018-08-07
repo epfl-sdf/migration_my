@@ -518,6 +518,7 @@
 ./html/adec.epfl.ch/page-52887-en.html, https://documents.epfl.ch/groups/a/ad/adec-unit/www/Affiches/Adec2.jpg
 ./html/adec.epfl.ch/page-52887-fr.html, https://documents.epfl.ch/groups/a/ad/adec-unit/www/Affiches/Adec2.jpg
 ./html/adec.epfl.ch/page-52887.html, https://documents.epfl.ch/groups/a/ad/adec-unit/www/Affiches/Adec2.jpg
+./html/adec.epfl.ch/page-52887.html;jsessionid=E90D99C81D2B73BDBB05F56A106C6725.html, https://documents.epfl.ch/groups/a/ad/adec-unit/www/Affiches/Adec2.jpg
 ./html/adec.epfl.ch/page-52926-en.html, https://documents.epfl.ch/groups/a/ad/adec-unit/www/Affiches/Adec2.jpg
 ./html/adec.epfl.ch/page-52926-fr.html, https://documents.epfl.ch/groups/a/ad/adec-unit/www/Affiches/Adec2.jpg
 ./html/aesv.epfl.ch/page-124895-fr.html, https://documents.epfl.ch/groups/a/ae/aesv-unit/www/Halloween%202014/Halloween%20%280%29.jpg
@@ -640,8 +641,6 @@
 ./html/aphys.epfl.ch/page-153139.html, https://documents.epfl.ch/users/t/tb/tbaracch/www/playStore.png
 ./html/aphys.epfl.ch/page-88850.html, https://documents.epfl.ch/users/t/tb/tbaracch/www/about1.jpg
 ./html/aphys.epfl.ch/page-88850.html, https://documents.epfl.ch/users/t/tb/tbaracch/www/playStore.png
-./html/aphys.epfl.ch/page-88850.html;jsessionid=5696197034A1A0B6F30B86E8E9567E32.html, https://documents.epfl.ch/users/t/tb/tbaracch/www/about1.jpg
-./html/aphys.epfl.ch/page-88850.html;jsessionid=5696197034A1A0B6F30B86E8E9567E32.html, https://documents.epfl.ch/users/t/tb/tbaracch/www/playStore.png
 ./html/apml.epfl.ch/page-99892-fr.html, https://documents.epfl.ch/groups/m/my/myepfl/www/html_skin/epflindex/icons/jpg.png
 ./html/apml.epfl.ch/page-99892-fr.html, https://documents.epfl.ch/users/s/sa/sayah/www/2011/Photo%201.jpg
 ./html/apml.epfl.ch/page-99892-fr.html, https://documents.epfl.ch/users/s/sa/sayah/www/2011/Photo%202.JPG
@@ -729,6 +728,7 @@
 ./html/callista.epfl.ch/page-100904-fr.html, https://documents.epfl.ch/groups/c/ca/callista-unit/www/album/conf/mars2004.jpg
 ./html/callista.epfl.ch/page-100904-fr.html, https://documents.epfl.ch/groups/c/ca/callista-unit/www/album/conf/nde2003.jpg
 ./html/callista.epfl.ch/page-85574-fr.html, https://documents.epfl.ch/groups/c/ca/callista-unit/www/monitor.gif
+./html/callista.epfl.ch/page-85574-fr.html;jsessionid=18D266E46079DA69AEB996E10EE81139.html, https://documents.epfl.ch/groups/c/ca/callista-unit/www/monitor.gif
 ./html/callista.epfl.ch/page-85574.html, https://documents.epfl.ch/groups/c/ca/callista-unit/www/monitor.gif
 ./html/callista.epfl.ch/pv.html, https://documents.epfl.ch/groups/c/ca/callista-unit/www/presentations/AG/AG-2012-11-17-General.pdf
 ./html/callista.epfl.ch/pv.html, https://documents.epfl.ch/groups/c/ca/callista-unit/www/presentations/AG/AG-2012-11-17-Observations.pdf
@@ -1375,6 +1375,7 @@
 ./html/dynamic.epfl.ch/index.html, https://documents.epfl.ch/groups/d/dy/dynamic-unit/private/Photos-Dynamic/Acceuil/DynamicAcceuil.png
 ./html/dynamic.epfl.ch/page-118479-fr.html, https://documents.epfl.ch/groups/d/dy/dynamic-unit/private/Photos-Dynamic/Acceuil/DynamicAcceuil.png
 ./html/dynamic.epfl.ch/page-118479.html, https://documents.epfl.ch/groups/d/dy/dynamic-unit/private/Photos-Dynamic/Acceuil/DynamicAcceuil.png
+./html/dynamic.epfl.ch/page-118479.html;jsessionid=D93FBA321557B5128B1E6A07534F6828.html, https://documents.epfl.ch/groups/d/dy/dynamic-unit/private/Photos-Dynamic/Acceuil/DynamicAcceuil.png
 ./html/dynamic.epfl.ch/page-118499-fr.html, https://documents.epfl.ch/groups/d/dy/dynamic-unit/private/Photos-Dynamic/Photos/Alumni_10_05_16/Dynamique_0.jpg
 ./html/dynamic.epfl.ch/page-118499-fr.html, https://documents.epfl.ch/groups/d/dy/dynamic-unit/private/Photos-Dynamic/Photos/Alumni_10_05_16/Dynamique_10.jpg
 ./html/dynamic.epfl.ch/page-118499-fr.html, https://documents.epfl.ch/groups/d/dy/dynamic-unit/private/Photos-Dynamic/Photos/Alumni_10_05_16/Dynamique_11.jpg
@@ -6271,12 +6272,14 @@
 ./html/oche.epfl.ch/enregistrements.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
 ./html/oche.epfl.ch/espace-membres.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
 ./html/oche.epfl.ch/evenements.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
-./html/oche.epfl.ch/evenements;jsessionid=3EFDDC893CFACB27830DB42578EF97EE.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
+./html/oche.epfl.ch/evenements;jsessionid=4D4C6307833C22C3662787884EF20DA2.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
 ./html/oche.epfl.ch/events.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
 ./html/oche.epfl.ch/home-en.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
 ./html/oche.epfl.ch/home-en.html, https://documents.epfl.ch/groups/o/oc/oche/www/header_2015.jpg
 ./html/oche.epfl.ch/home.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
 ./html/oche.epfl.ch/home.html, https://documents.epfl.ch/groups/o/oc/oche/www/header_2015.jpg
+./html/oche.epfl.ch/home;jsessionid=4D4C6307833C22C3662787884EF20DA2.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
+./html/oche.epfl.ch/home;jsessionid=4D4C6307833C22C3662787884EF20DA2.html, https://documents.epfl.ch/groups/o/oc/oche/www/header_2015.jpg
 ./html/oche.epfl.ch/index.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png
 ./html/oche.epfl.ch/index.html, https://documents.epfl.ch/groups/o/oc/oche/www/header_2015.jpg
 ./html/oche.epfl.ch/join-us.html, https://documents.epfl.ch/groups/o/oc/oche-unit/www/logo_oche_vert_inv.png

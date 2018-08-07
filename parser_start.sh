@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour lancer toute la moulinette pour parser les istes et calculer la taille golbale des documents 'my'
-#zf180806.1630
+#zf180807.0856
 
 echo -e " 
 

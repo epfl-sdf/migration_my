@@ -4,8 +4,15 @@
 
 zcsv=`cat liste_pages.csv`
 
-if grep -lq myEpflGalleryBox $zcsv ; then
+
+
     for i in $zcsv ; do
+
+if grep -lq myEpflGalleryBox $i ; then
+
+echo "--------------------"$i
+
+
         while read zline; do
             if [[ $zline == *"documents.epfl.ch"* ]]; then
                 echo $zline | sed 's/"/\n/g' | grep "documents.epfl.ch" | egrep -i ".jpg|.png|.gif|.pdf" > temp.csv
@@ -15,6 +22,6 @@ if grep -lq myEpflGalleryBox $zcsv ; then
                 done
             fi
         done < $i
-    done
 fi
+    done
 

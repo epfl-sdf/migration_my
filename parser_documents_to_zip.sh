@@ -6,7 +6,7 @@
 echo ---------- start
 
 echo -e "site, url" > tempzip.csv
-head -n 10 liste_url_documents_uniq.csv >> tempzip.csv
+head -n 100000 liste_url_documents_uniq.csv >> tempzip.csv
 #cat liste_url_documents_uniq.csv >> tempzip.csv
 
 rm -Rf zip
@@ -28,19 +28,19 @@ while read site url ; do
         site=`echo $site | awk -F "/" '{print $3}'`
         echo -e "le site est: "$site
         if [ "$zsite" != "$site" ] ; then
+            echo -e "on zip le dossier: "$zsite
+            zip -r ../$zsite".zip" .
             echo -e "on remonte d'un étage"
             cd ..
-            echo -e "on zip le dossier: "$zsite
-            #zip $zsite
             echo -e "on crée le nouveau dossier "$site" et on se déplace"
             mkdir $site
             cd $site
             zsite=$site
             echo -e "on aspire le nouveau site:"$site
         fi
-        echo -e "on aspire: wget -x ."$url"."
+        echo -e "on aspire: "$url
         pwd
-        wget -x \"$url\"
+        wget -x $url
     fi
     ((nblines+=1))
     echo ""

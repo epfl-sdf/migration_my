@@ -7,7 +7,12 @@ Parser une liste de sites Jahia supposés contenir des boîtes Jahia myEpflGalle
 
 
 ## Installation
-Sur une machine Linux Ubuntu, il n'y a rien à installer
+Il faut installer ceci:
+
+```
+sudo apt-get update
+sudo apt-get install zip
+```
 
 ## Description des scripts utilisés
 
@@ -41,7 +46,7 @@ Simplement lancer le script:
 
 
 
-zf180807.1537
+zf180808.1652
 
 
 
@@ -54,3 +59,4 @@ zf180807.1537
 
 
 
+.

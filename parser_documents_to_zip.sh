@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #petit script pour aspirer tous les documents 'my' qui se trouvent dans les boîtes myEpflGallery selon une liste .csv
-#zf180808.1623
+#zf180808.1755
 #source: https://www.cyberciti.biz/faq/unix-linux-bash-read-comma-separated-cvsfile/
 
 echo ---------- start
@@ -9,13 +9,14 @@ echo -e "site, url" > tempzip.csv
 head -n 100000 liste_url_documents_uniq.csv >> tempzip.csv
 #cat liste_url_documents_uniq.csv >> tempzip.csv
 
+cd /mnt/data
 rm -Rf zip
 mkdir zip
 cd zip
 mkdir tmp
 cd tmp
 
-INPUT=../../tempzip.csv
+INPUT=/home/ubuntu/migration_my/tempzip.csv
 OLDIFS=$IFS
 IFS=,
 [ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
@@ -46,6 +47,11 @@ while read site url ; do
     echo ""
 done < $INPUT
 IFS=$OLDIFS
+
+echo -e "on zip le dossier: "$zsite
+zip -r ../$zsite".zip" .
+
+
 
 
 exit

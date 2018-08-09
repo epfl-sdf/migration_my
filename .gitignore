@@ -2,8 +2,8 @@
 ._.DS_Store
 *.swp
 temp.csv
-html
-zip
+html*
+zip*
 
 
 # Byte-compiled / optimized / DLL files

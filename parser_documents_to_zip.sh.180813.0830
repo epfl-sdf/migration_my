@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#petit script pour aspirer tous les documents 'my' qui se trouvent dans les boîtes myEpflGallery selon une liste .csv et en faire un zip avec notation préfixée
-#zf180813.1021
+#petit script pour aspirer tous les documents 'my' qui se trouvent dans les boîtes myEpflGallery selon une liste .csv
+#zf180808.1755
 #source: https://www.cyberciti.biz/faq/unix-linux-bash-read-comma-separated-cvsfile/
 
 echo ---------- start
@@ -41,7 +41,7 @@ while read site url ; do
         fi
         echo -e "on aspire: "$url
         pwd
-        wget -O `echo $url | awk -F "/" '{ for(i=5 ; i <= NF ; i++) { printf "_%s",$i } printf "\n"}' | sed "s/\%20/_/g" | sed "s/\%2C//g"` $url
+        wget -x $url
     fi
     ((nblines+=1))
     echo ""
